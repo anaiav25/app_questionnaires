@@ -1,0 +1,42 @@
+﻿@model App_Questionnaires.Models.QuestionnaireViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Test
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @foreach (var item in Model.DrawQuestionnaire)
+                {
+                    <p>
+
+                    @if (item.ToString().StartsWith("_ "))
+                    {
+                        <b>@item</b>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item)
+                    }
+                        </p>
+                }
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
